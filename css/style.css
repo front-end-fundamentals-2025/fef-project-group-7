@@ -181,6 +181,148 @@ footer {
   color: blue;
 }
 
+/* RING TYRA */
+
+.heading-product {
+  padding-left: 2rem;
+}
+
+.product-page-container {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.size-chooser {
+  display: flex;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  gap: 10px;
+  align-items: center;
+}
+
+.size-chooser label {
+  cursor: pointer;
+  padding: 10px 10px;
+  border: 2px solid blue;
+  border-radius: 2rem;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.size-chooser input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.size-chooser label:hover {
+  background-color: blue;
+  color: white;
+}
+
+.size-chooser input:checked {
+  background-color: blue;
+  color: white;
+  border-color: blue;
+}
+
+#ring-button {
+  background-color: blue;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 3.5px solid blue;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#ring-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 3.5px solid blue;
+}
+
+.quantity-dropdown {
+  padding: 1rem;
+  font-size: 1rem;
+  margin-left: 2rem;
+  border: 3px solid blue;
+  background-color: #f9f9f9;
+  color: blue;
+  width: 150px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 10rem;
+  padding: 0rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.product-list {
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+#description-button,
+#composition-button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 2rem;
+  margin-top: 3rem;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+  border: 0;
+  border-bottom: 1px solid transparent;
+}
+
+#composition-button {
+  margin-left: 1rem;
+}
+
+#composition-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: blue;
+  font-size: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid blue;
+}
+
+#description-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: blue;
+  font-size: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid blue;
+}
+
+.ring-description {
+  min-height: 18rem;
+  font-size: 1rem;
+  color: #000000;
+}
+
+#empty-paragraph {
+  padding-top: 1rem;
+}
+
 /* RESPONSIVENESS */
 
 @media screen and (max-width: 1000px) {
