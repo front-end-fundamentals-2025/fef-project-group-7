@@ -99,6 +99,11 @@ header {
 
 /* HOME */
 
+.img-grid {
+  display: grid;
+  position: relative;
+}
+
 .headline {
   width: 100vw;
   height: 60vh;
@@ -106,6 +111,14 @@ header {
   object-position: center;
   display: block;
   padding-bottom: 2rem;
+  width: 100%;
+  /* height: 50%; */
+  object-fit: cover;
+  /* display: none; */
+  grid-row-start: 1;
+  grid-column-start: 1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .product-image {
@@ -461,10 +474,15 @@ a:hover {
 }
 
 /*about us*/
-.about-header {
+.about-us {
   text-align: center;
-  margin-top: 2rem;
-  padding: 0%;
+  margin-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.about-us p {
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .about-container {
@@ -479,7 +497,7 @@ a:hover {
 
 .about-container img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   margin-top: 5%;
 }
 
@@ -490,4 +508,16 @@ a:hover {
 
 .inner-grid {
   grid-template-rows: 1fr 1fr;
+  margin-top: 15px;
+}
+
+/*care instructions page*/
+.care img {
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.care {
+  text-align: center;
 }
