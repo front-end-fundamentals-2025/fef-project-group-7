@@ -82,6 +82,23 @@ header {
   justify-content: right;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 10rem;
+  padding: 0rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* HOME */
 
 .headline {
