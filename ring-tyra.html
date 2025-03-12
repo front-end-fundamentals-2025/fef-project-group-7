@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/main.js" defer></script>
     <script src="js/header-nav.js" defer></script>
+    <script src="js/cart.js" defer></script>
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,15 +19,44 @@
   </head>
   <body>
     <header>
-      <div class="header-container">
-        <a href="index.html">
-          <img class="logo" src="img/big-logo.png" alt="logotype" />
-        </a>
+      <section class="header-container">
+        <figure>
+          <a href="index.html">
+            <img class="logo" src="img/big-logo.png" alt="logotype" />
+          </a>
+        </figure>
 
-        <div class="header-icons">
-          <a href="#"><img class="icon" src="img/profile.png" alt="" /></a>
-          <a href="cart.html"><img class="icon" src="img/cart.png" alt="" /></a>
-        </div>
+        <figure class="collapsible-in-header">
+          <!-- <a href="#"><img class="icon" src="img/profile.png" alt="" /></a>  -->
+
+          <div class="collapsible-cart">
+            <img class="icon" src="img/cart.png" alt="" />
+          </div>
+          <div class="collapsible-cart-content">
+            <section class="cart-container">
+              <div id="cart-item">
+                <img id="empty-img" src="" alt="" />
+                <div class="item-details">
+                  <h3 id="empty-h3"></h3>
+                  <p id="empty-size"></p>
+                  <p id="empty-quantity"></p>
+                  <img id="delete-button" class="icon" src="" alt="">
+                </div>
+              </div>
+              <div class="checkout-summary">
+                <h3>ORDER SUMMARY</h3>
+                <p>TOTAL: <span id="cart-total">500 SEK</span></p>
+                <a href="purchase.html">
+                  <button id="checkout-button">CONFIRM PURCAHSE</button></a
+                >
+        
+                <button class="login-button">LOG IN</button>
+              </div>
+            </section>
+            </div>
+          </div>
+
+        
         <div class="collapsible-menu">
           <img class="icon" src="img/menu-icon.png" alt="" />
         </div>
@@ -44,7 +74,7 @@
             /></a>
           </div>
         </div>
-      </div>
+      </section>
 
       <div class="header-navigation">
         <figure>
@@ -65,8 +95,10 @@
             </ul>
           </nav>
         </figure>
-      </div>
+        </figure>
+          
     </header>
+
 
     <main>
       <section class="product-page-container">
@@ -77,7 +109,7 @@
           <h2 class="heading-product">TYRA RING</h2>
           <h2 class="heading-product">500 KR</h2>
           <h3>CHOOSE SIZE</h3>
-          <div class="size-chooser">
+          <div id="size-chooser">
             <label> <input type="radio" name="size" value="44" /> 44 </label>
             <label> <input type="radio" name="size" value="47" /> 47 </label>
             <label> <input type="radio" name="size" value="49" /> 49 </label>

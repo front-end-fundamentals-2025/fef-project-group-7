@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CHANGE TITLE  -->
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/graficavivere.js" defer></script>
+    <script src="js/header-nav.js defer"></script>
+    <script src="js/header-nav.js" defer></script>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <section class="header-container">
+        <figure>
+          <a href="index.html">
+            <img class="logo" src="img/big-logo.png" alt="logotype" />
+          </a>
+        </figure>
+
+        <figure class="collapsible-in-header">
+          <!-- <a href="#"><img class="icon" src="img/profile.png" alt="" /></a>  -->
+
+          <div class="collapsible-cart">
+            <img class="icon" src="img/cart.png" alt="" />
+          </div>
+          <div class="collapsible-cart-content">
+            <section class="cart-container">
+              <div id="cart-item">
+                <img id="empty-img" src="" alt="" />
+                <div class="item-details">
+                  <h3 id="empty-h3"></h3>
+                  <p id="empty-size"></p>
+                  <p id="empty-quantity"></p>
+                  <img id="delete-button" class="icon" src="" alt="">
+                </div>
+              </div>
+              <div class="checkout-summary">
+                <h3>ORDER SUMMARY</h3>
+                <p>TOTAL: <span id="cart-total">500 SEK</span></p>
+                <a href="purchase.html">
+                  <button id="checkout-button">CONFIRM PURCAHSE</button></a
+                >
+        
+                <button class="login-button">LOG IN</button>
+              </div>
+            </section>
+            </div>
+          </div>
+
+        
+        <div class="collapsible-menu">
+          <img class="icon" src="img/menu-icon.png" alt="" />
+        </div>
+        <div class="collapsible-menu-content">
+          <a href="index.html">HOME</a>
+          <a href="rings.html">RINGS</a>
+          <a href="necklaces.html">NECKLACES</a>
+          <a href="bracelets.html">BRACELETS</a>
+          <a href="earrings.html">EARRINGS</a>
+          <a href="collections.html">COLLECTIONS</a>
+          <div class="collapsible-menu-icons">
+            <a href="#"><img class="icon" src="img/profile.png" alt="" /></a>
+            <a href="cart.html"
+              ><img class="icon" src="img/cart.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="header-navigation">
+        <figure>
+          <nav>
+            <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="rings.html">RINGS</a></li>
+              <li><a href="necklaces.html">NECKLACES</a></li>
+              <li><a href="bracelets.html">BRACELETS</a></li>
+              <li><a href="earrings.html">EARRINGS</a></li>
+              <li class="dropdown">
+                <a href="collections.html">COLLECTIONS</a>
+                <div class="dropdown-content">
+                  <a href="momento-vivere.html">MOMENTO VIVERE</a>
+                  <a href="grafica-vivere.html">GRAFICA VIVERE</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </figure>
+        </figure>
+          
+    </header>
+
+
+    <main>
+      <h2 class="centered-headline">GRAFICA VIVERE</h2>
+      <section class="img-grid-grafica">
+        <img class="headline-grafica" src="img/ring-alen.png" alt="" />
+        <img class="headline-grafica" src="img/necklace-markus2.png" alt="" />
+        <img class="headline-grafica" src="img/bracelet-ekrem.png" alt="" />
+        <img class="headline-grafica" src="img/earrings-jacob.png" alt="" />
+      </section>
+
+      <section class="collection-products-container">
+        <a href="#">
+          <figure>
+            <img class="product-image" src="img/ring-alen.png" alt="" />
+            <div class="name-price">
+              <figcaption>ALEN RING</figcaption>
+              <figcaption>500 KR</figcaption>
+            </div>
+            <figcaption class="ring-size">44 47 49 52 55 57 59</figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure>
+            <img class="product-image" src="img/necklace-markus2.png" alt="" />
+            <div class="name-price">
+              <figcaption>MARKUS NECKLACE</figcaption>
+              <figcaption>500 KR</figcaption>
+            </div>
+            <figcaption class="ring-size">40 CM 50 CM</figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure>
+            <img class="product-image" src="img/bracelet-ekrem.png" alt="" />
+            <div class="name-price">
+              <figcaption>EKREM BRACELET</figcaption>
+              <figcaption>500 KR</figcaption>
+            </div>
+            <figcaption class="ring-size">XS S M L XL</figcaption>
+          </figure>
+        </a>
+        <a href="#">
+          <figure>
+            <img class="product-image" src="img/earrings-jacob.png" alt="" />
+            <div class="name-price">
+              <figcaption>JACOB EARRINGS</figcaption>
+              <figcaption>500 KR</figcaption>
+            </div>
+            <figcaption class="ring-size">ONESIZE</figcaption>
+          </figure>
+        </a>
+      </section>
+    </main>
+    <footer>
+      <section class="footer-container">
+        <figure>
+          <img
+            class="round-logo"
+            src="img/round-logo.png"
+            alt="round logotype"
+          />
+        </figure>
+        <figure>
+          <p class="blue-paragraph">CUSTOMER SERVICE</p>
+          <ul class="footer-links">
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="#">SHIPPING AND RETURNS</a></li>
+            <li><a href="care.html">CARE INSTRUCTIONS</a></li>
+          </ul>
+        </figure>
+        <figure>
+          <p class="blue-paragraph">SOCIALS</p>
+          <ul class="footer-links">
+            <li><a href="#">INSTAGRAM</a></li>
+            <li><a href="#">FACEBOOK</a></li>
+            <li><a href="#">TIKTOK</a></li>
+            <li><a href="#">EMAIL</a></li>
+          </ul>
+        </figure>
+      </section>
+
+      <h4 id="copyright">© ARGENTIQ 2025</h4>
+    </footer>
+  </body>
+</html>
