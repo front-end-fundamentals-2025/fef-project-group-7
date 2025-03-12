@@ -521,3 +521,15 @@ a:hover {
 .care {
   text-align: center;
 }
+
+/*purchase done*/
+
+#ninis {
+  width: 40%;
+}
+
+.tnks-for-purchase {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
