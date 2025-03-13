@@ -827,4 +827,11 @@ a:hover {
   .collapsible-menu {
     padding-right: 0rem;
   }
+  .collapsible-cart-content {
+    top: 16%;
+  }
+  .collapsible-menu-content {
+    top: 16%;
+    padding-left: 1rem;
+  }
 }
