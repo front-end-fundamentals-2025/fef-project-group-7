@@ -509,7 +509,7 @@ footer {
 }
 
 #checkout-button,
-.login-button {
+#clear-button {
   display: block;
   width: 100%;
   padding: 10px;
@@ -519,14 +519,53 @@ footer {
 }
 
 #checkout-button {
-  background: black;
+  background: #587fee;
+  border: 1px solid #587fee;
   color: white;
+  transition: 0.3s ease-in;
 }
 
-.login-button {
+#checkout-button:hover {
+  background: #ffffff;
+  border: 1px solid #587fee;
+  color: rgb(0, 0, 0);
+}
+
+#clear-button {
   background: white;
-  border: 1px solid black;
+  border: 1px solid #587fee;
   color: black;
+  transition: 0.3s ease-in;
+}
+
+#clear-button:hover {
+  background: #587fee;
+  border: 1px solid #587fee;
+  color: rgb(255, 255, 255);
+}
+
+/*checkout page*/
+
+#confirm-button {
+  background-color: #587fee;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 1rem;
+  padding-left: 4.9rem;
+  padding-right: 4.9rem;
+  margin: 3rem;
+  margin-top: 2rem;
+  margin-left: 4.4rem;
+  margin-bottom: 4.4rem;
+  border: 3.5px solid #587fee;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#confirm-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 3.5px solid #587fee;
 }
 
 /*about us*/
@@ -635,14 +674,47 @@ textarea {
 
 /*purchase done*/
 
-#ninis {
-  width: 40%;
-}
-
 .tnks-for-purchase {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 2rem;
+}
+
+#ninis {
+  width: 30%;
+  animation-name: animationNinis;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+
+.tnks-for-purchase a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#continue-button {
+  background-color: #587fee;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 1rem;
+  padding-left: 4.9rem;
+  padding-right: 4.9rem;
+  margin: 3rem;
+  margin-top: 2rem;
+  margin-left: 4.4rem;
+  margin-bottom: 4.4rem;
+  border: 3.5px solid #587fee;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#continue-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 3.5px solid #587fee;
 }
 
 /* ANIMATIONS */
@@ -655,6 +727,20 @@ textarea {
   100% {
     opacity: 1;
     transform: translate(0px, 0);
+  }
+}
+
+@keyframes animationNinis {
+  0% {
+  }
+  50% {
+    transform: rotateZ(180deg) perspective(700px);
+    transform-origin: center center;
+  }
+  100% {
+    scale: 0.5;
+    transform: rotateZ(355deg) perspective(700px);
+    transform-origin: center center;
   }
 }
 

@@ -40,6 +40,7 @@ const deleteItem = document.getElementById("delete-button");
 const quantityChooser = document.getElementById("quantity");
 const sizeChooser = document.getElementById("size-chooser");
 const checkoutButton = document.getElementById("checkout-button");
+const clearCartButton = document.getElementById("clear-button");
 
 addButton?.addEventListener("click", function () {
   let quantity = quantityChooser.value;
@@ -76,7 +77,7 @@ function addToCart() {
   }
 }
 
-deleteItem.addEventListener("click", function () {
+function clearCart() {
   localStorage.removeItem("tyraRing");
   localStorage.removeItem("quantity");
   localStorage.removeItem("size");
@@ -90,21 +91,18 @@ deleteItem.addEventListener("click", function () {
   document.getElementById("empty-size").innerText = "";
   document.getElementById("empty-quantity").innerText = "";
   document.getElementById("cart-total").innerText = "";
+}
+
+deleteItem.addEventListener("click", function () {
+  clearCart();
+});
+
+clearCartButton.addEventListener("click", function () {
+  clearCart();
 });
 
 checkoutButton.addEventListener("click", function () {
-  localStorage.removeItem("tyraRing");
-  localStorage.removeItem("quantity");
-  localStorage.removeItem("size");
-  localStorage.removeItem("imgSrc");
-  localStorage.removeItem("trashImgSrc");
-  localStorage.removeItem("name");
-
-  document.getElementById("empty-img").src = "";
-  document.getElementById("delete-button").src = "";
-  document.getElementById("empty-h3").innerText = "";
-  document.getElementById("empty-size").innerText = "";
-  document.getElementById("empty-quantity").innerText = "";
+  clearCart();
 });
 
 // Fix for cart emptying when refreshing or switching between pages https://chatgpt.com/share/67d2eafd-62ec-800e-abec-0b4fc51d19f2
