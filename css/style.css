@@ -96,7 +96,7 @@ header {
 
 .collapsible-menu {
   display: none;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-right: 1rem;
 }
 
@@ -109,16 +109,13 @@ header {
 .collapsible-cart-content {
   display: none;
   z-index: 1000;
-  padding: 1rem;
-  padding-right: 0;
   background: #ffffff;
   position: absolute;
   width: 100%;
+  height: 100rem;
   top: 70%;
   left: 0%;
   justify-content: center;
-  padding-left: 3rem;
-  padding-bottom: 4rem;
   animation-name: animationMenu;
   animation-timing-function: ease-in;
   animation-duration: 0.5s;
@@ -131,6 +128,7 @@ header {
   background: #ffffff;
   position: absolute;
   width: 100%;
+  height: 100rem;
   top: 70%;
   left: 0%;
   justify-content: center;
@@ -418,6 +416,38 @@ footer {
   padding-top: 1rem;
 }
 
+/* COLLECTIONS PAGES */
+
+.img-grid-grafica {
+  display: grid;
+  position: relative;
+}
+
+.headline-grafica {
+  width: 100vw;
+  height: 60vh;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  padding-bottom: 2rem;
+  width: 100%;
+  /* height: 50%; */
+  object-fit: cover;
+  /* display: none; */
+  grid-row-start: 1;
+  grid-column-start: 1;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  padding-top: 1rem;
+}
+
+.collection-products-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
 /*cart*/
 .cart-header {
   text-align: center;
@@ -427,23 +457,37 @@ footer {
 
 .cart-container {
   display: flex;
+  padding: 2rem;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 80%;
+}
+
+.cart-container h3 {
+  padding-left: 0;
 }
 
 #cart-item {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   gap: 20px;
-  border-bottom: 1px solid #ddd;
-  padding: 15px;
+  padding: 2rem;
 }
 
-#cart-item img {
-  width: 120px;
-  height: auto;
-  border-radius: 5px;
+#empty-img {
+  width: 10rem;
+}
+
+#delete-button {
+  width: 3rem;
+}
+
+#empty-h3,
+#empty-size,
+#empty-quantity {
+  padding-top: 1rem;
+  padding-left: 0;
+  padding-bottom: 1rem;
 }
 
 .item-details {
@@ -521,6 +565,61 @@ footer {
 .inner-grid {
   grid-template-rows: 1fr 1fr;
   margin-top: 15px;
+}
+
+/* CONTACT */
+form {
+  flex: left;
+  padding-left: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+#name-input,
+#order-number-input,
+#email-input {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem;
+  padding-right: 8rem;
+  cursor: pointer;
+  border: 3.5px solid #587fee;
+}
+
+textarea {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem;
+  padding-bottom: 3rem;
+  padding-right: 8rem;
+  cursor: pointer;
+  border: 3.5px solid #587fee;
+}
+
+#send-button {
+  display: block;
+  background-color: #587fee;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 2rem;
+  padding: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: 1rem;
+  border: 3.5px solid #587fee;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+#send-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 3.5px solid #587fee;
 }
 
 /*care instructions page*/
@@ -623,5 +722,18 @@ a:hover {
   }
   .collections-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .icon {
+    width: 2.5rem;
+  }
+  .logo {
+    padding-left: 0;
+    width: 12rem;
+  }
+  .collapsible-menu {
+    padding-right: 0rem;
   }
 }

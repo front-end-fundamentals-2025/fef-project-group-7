@@ -32,6 +32,8 @@ for (i = 0; i < coll.length; i++) {
 
 // end of citation
 
+// CART FUNCTIONALITY
+
 const addButton = document.getElementById("ring-button");
 const cartItems = document.getElementById("cart-item");
 const deleteItem = document.getElementById("delete-button");
@@ -39,18 +41,17 @@ const quantityChooser = document.getElementById("quantity");
 const sizeChooser = document.getElementById("size-chooser");
 const checkoutButton = document.getElementById("checkout-button");
 
-addButton.addEventListener("click", function () {
+addButton?.addEventListener("click", function () {
   let quantity = quantityChooser.value;
-  let size = sizeChooser.value;
+  let size = document.querySelector('input[name="size"]:checked')?.value;
 
-  if (quantity !== "" && size !== "") {
+  if (quantity !== "" && size) {
     localStorage.setItem("quantity", quantity);
     localStorage.setItem("size", size);
     localStorage.setItem("tyraRing", "inCart");
     localStorage.setItem("imgSrc", "img/ring-tyra.png");
     localStorage.setItem("trashImgSrc", "img/delete.png");
     localStorage.setItem("name", "TYRA RING");
-
     addToCart();
   }
 });
@@ -68,6 +69,10 @@ function addToCart() {
     document.getElementById("empty-size").innerText = "SIZE: " + size;
     document.getElementById("empty-quantity").innerText =
       "QUANTITY: " + quantity;
+
+    const totalPrice = 500 * quantity;
+    document.getElementById("cart-total").innerText =
+      "TOTAL: " + totalPrice + " KR";
   }
 }
 
@@ -84,6 +89,7 @@ deleteItem.addEventListener("click", function () {
   document.getElementById("empty-h3").innerText = "";
   document.getElementById("empty-size").innerText = "";
   document.getElementById("empty-quantity").innerText = "";
+  document.getElementById("cart-total").innerText = "";
 });
 
 checkoutButton.addEventListener("click", function () {
@@ -100,3 +106,11 @@ checkoutButton.addEventListener("click", function () {
   document.getElementById("empty-size").innerText = "";
   document.getElementById("empty-quantity").innerText = "";
 });
+
+// Fix for cart emptying when refreshing or switching between pages https://chatgpt.com/share/67d2eafd-62ec-800e-abec-0b4fc51d19f2
+
+document.addEventListener("DOMContentLoaded", function () {
+  addToCart();
+});
+
+// end of citation

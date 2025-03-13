@@ -18,15 +18,44 @@
   </head>
   <body>
     <header>
-      <div class="header-container">
-        <a href="index.html">
-          <img class="logo" src="img/big-logo.png" alt="logotype" />
-        </a>
+      <section class="header-container">
+        <figure>
+          <a href="index.html">
+            <img class="logo" src="img/big-logo.png" alt="logotype" />
+          </a>
+        </figure>
 
-        <div class="header-icons">
-          <a href="#"><img class="icon" src="img/profile.png" alt="" /></a>
-          <a href="cart.html"><img class="icon" src="img/cart.png" alt="" /></a>
-        </div>
+        <figure class="collapsible-in-header">
+          <!-- <a href="#"><img class="icon" src="img/profile.png" alt="" /></a>  -->
+
+          <div class="collapsible-cart">
+            <img class="icon" src="img/cart.png" alt="" />
+          </div>
+          <div class="collapsible-cart-content">
+            <section class="cart-container">
+              <div id="cart-item">
+                <img id="empty-img" src="" alt="" />
+                <div class="item-details">
+                  <h3 id="empty-h3"></h3>
+                  <p id="empty-size"></p>
+                  <p id="empty-quantity"></p>
+                </div>
+                <img id="delete-button" src="" alt="">
+              </div>
+              <div class="checkout-summary">
+                <h3>ORDER SUMMARY</h3>
+                <p id="cart-total"></p>
+                <a href="purchase.html">
+                  <button id="checkout-button">CONFIRM PURCAHSE</button></a
+                >
+        
+                <button class="login-button">LOG IN</button>
+              </div>
+            </section>
+            </div>
+          </div>
+
+        
         <div class="collapsible-menu">
           <img class="icon" src="img/menu-icon.png" alt="" />
         </div>
@@ -37,14 +66,8 @@
           <a href="bracelets.html">BRACELETS</a>
           <a href="earrings.html">EARRINGS</a>
           <a href="collections.html">COLLECTIONS</a>
-          <div class="collapsible-menu-icons">
-            <a href="#"><img class="icon" src="img/profile.png" alt="" /></a>
-            <a href="cart.html"
-              ><img class="icon" src="img/cart.png" alt=""
-            /></a>
-          </div>
         </div>
-      </div>
+      </section>
 
       <div class="header-navigation">
         <figure>
@@ -65,7 +88,8 @@
             </ul>
           </nav>
         </figure>
-      </div>
+        </figure>
+          
     </header>
 
     <main>
