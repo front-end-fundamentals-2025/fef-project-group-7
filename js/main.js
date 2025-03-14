@@ -1,20 +1,116 @@
-const paragraphElement = document.getElementById("empty-paragraph");
-const buttonElementDesc = document.getElementById("description-button");
-const buttonElementComp = document.getElementById("composition-button");
+// the following code was retrieved from https://www.w3schools.com/howto/howto_js_collapsible.asp
 
-paragraphElement.innerText =
-  "This elegant silver ring features a delicate design adorned with sparkling rhinestones, adding a touch of brilliance to any look. Its sleek and timeless shape makes it perfect for both everyday wear and special occasions. Lightweight and comfortable, this ring effortlessly enhances your style with a subtle yet eye-catching shimmer.";
+var coll = document.getElementsByClassName("collapsible-menu");
+var i;
 
-buttonElementDesc.addEventListener("click", function (event) {
-  // page refresh fix via https://stackoverflow.com/questions/71671527/why-is-the-page-instantly-reloading-on-clicking-the-form-on-submit-button
-  event.preventDefault();
-  paragraphElement.innerText =
-    "This elegant silver ring features a delicate design adorned with sparkling rhinestones, adding a touch of brilliance to any look. Its sleek and timeless shape makes it perfect for both everyday wear and special occasions. Lightweight and comfortable, this ring effortlessly enhances your style with a subtle yet eye-catching shimmer.";
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+var coll = document.getElementsByClassName("collapsible-cart");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
+// end of citation
+
+// CART FUNCTIONALITY
+
+const addButton = document.getElementById("ring-button");
+const cartItems = document.getElementById("cart-item");
+const deleteItem = document.getElementById("delete-button");
+const quantityChooser = document.getElementById("quantity");
+const sizeChooser = document.getElementById("size-chooser");
+const checkoutButton = document.getElementById("checkout-button");
+const clearCartButton = document.getElementById("clear-button");
+
+addButton?.addEventListener("click", function () {
+  let quantity = quantityChooser.value;
+  let size = document.querySelector('input[name="size"]:checked')?.value;
+
+  if (quantity !== "" && size) {
+    localStorage.setItem("quantity", quantity);
+    localStorage.setItem("size", size);
+    localStorage.setItem("tyraRing", "inCart");
+    localStorage.setItem("imgSrc", "img/ring-tyra.png");
+    localStorage.setItem("trashImgSrc", "img/delete.png");
+    localStorage.setItem("name", "TYRA RING");
+    addToCart();
+  }
 });
 
-buttonElementComp.addEventListener("click", function (event) {
-  // page refresh fix via https://stackoverflow.com/questions/71671527/why-is-the-page-instantly-reloading-on-clicking-the-form-on-submit-button
-  event.preventDefault();
-  paragraphElement.innerText =
-    "All jewelry is made of 925 sterling silver, a high-quality alloy consisting of 92.5% pure silver and 7.5% other metals, usually copper, to enhance durability. Each piece is carefully crafted and tested to meet the highest quality standards. All jewelry complies with EU regulations for nickel safety, meaning that the amount of nickel released is below the permitted limit (0.05%). While most metals contain trace amounts of nickel, the levels are minimal and safe for wear. The materials used in production are continuously tested to ensure the highest possible quality.";
+function addToCart() {
+  const imgSrc = localStorage.getItem("imgSrc");
+  const trashImgSrc = localStorage.getItem("trashImgSrc");
+  const name = localStorage.getItem("name");
+  const size = localStorage.getItem("size");
+  const quantity = localStorage.getItem("quantity");
+  if (imgSrc && name && size && quantity) {
+    document.getElementById("empty-img").src = imgSrc;
+    document.getElementById("delete-button").src = trashImgSrc;
+    document.getElementById("empty-h3").innerText = name;
+    document.getElementById("empty-size").innerText = "SIZE: " + size;
+    document.getElementById("empty-quantity").innerText =
+      "QUANTITY: " + quantity;
+
+    const totalPrice = 500 * quantity;
+    document.getElementById("cart-total").innerText =
+      "TOTAL: " + totalPrice + " KR";
+    document.getElementById("cart-total").style.opacity = "1";
+  }
+}
+
+function clearCart() {
+  localStorage.removeItem("tyraRing");
+  localStorage.removeItem("quantity");
+  localStorage.removeItem("size");
+  localStorage.removeItem("imgSrc");
+  localStorage.removeItem("trashImgSrc");
+  localStorage.removeItem("name");
+
+  document.getElementById("empty-img").src = "";
+  document.getElementById("delete-button").src = "";
+  document.getElementById("empty-h3").innerText = "";
+  document.getElementById("empty-size").innerText = "";
+  document.getElementById("empty-quantity").innerText = "";
+  document.getElementById("cart-total").innerText = ".";
+  document.getElementById("cart-total").style.opacity = "0";
+}
+
+deleteItem.addEventListener("click", function () {
+  clearCart();
 });
+
+clearCartButton.addEventListener("click", function () {
+  clearCart();
+});
+
+checkoutButton.addEventListener("click", function () {
+  clearCart();
+});
+
+// Fix for cart emptying when refreshing or switching between pages https://chatgpt.com/share/67d2eafd-62ec-800e-abec-0b4fc51d19f2
+
+document.addEventListener("DOMContentLoaded", function () {
+  addToCart();
+});
+
+// end of citation
